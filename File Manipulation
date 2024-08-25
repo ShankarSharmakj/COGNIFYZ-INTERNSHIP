@@ -1,0 +1,15 @@
+from collections import Counter
+import string
+def count_word_occurrences(file_path):
+    with open(file_path, 'r') as file:
+        text=file.read()
+
+    text=text.translate(str.maketrans('', '', string.punctuation)).lower()
+    words=text.split()
+    word_counts=Counter(words)
+
+    for word in sorted(word_counts):
+        print(f"{word}: {word_counts[word]}")
+
+file_path=input("Enter the path to the text file: ")
+count_word_occurrences(file_path)
