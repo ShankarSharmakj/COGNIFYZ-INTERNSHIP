@@ -1,0 +1,13 @@
+import requests
+from bs4 import BeautifulSoup
+def scrape_titles(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    titles = []
+    for title in soup.find_all('h2'):  # Assuming titles are in <h2> tags
+        titles.append(title.get_text())
+    return titles
+url = 'https://example-blog.com' 
+titles = scrape_titles(url)
+for idx, title in enumerate(titles, start=1):
+    print(f"Title {idx}: {title}")
