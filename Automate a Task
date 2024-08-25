@@ -1,0 +1,13 @@
+import os
+import shutil
+def organize_files(directory):
+    os.chdir(directory)
+    files=[f for f in os.listdir() if os.path.isfile(f)]
+    for file in files:
+        file_ext=file.split('.')[-1].lower()
+        if not os.path.exists(file_ext):
+            os.makedirs(file_ext)
+        shutil.move(file, os.path.join(file_ext, file))
+    print(f"Files have been organized into subdirectories in '{directory}'.")
+directory=input("Enter the path to the directory: ")
+organize_files(directory)
