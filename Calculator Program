@@ -1,0 +1,22 @@
+def add():
+    return a+b
+def sub():
+    return a-b
+def mul():
+    return a*b
+def div():
+    return a/b
+def mod():
+    return a%b
+a=int(input("Enter 1st Number: "))
+b=int(input("Enter 2nd Number: "))
+sum1=add()
+sum2=sub()
+sum3=mul()
+sum4=div()
+sum5=mod()
+print(sum1)
+print(sum2)
+print(sum3)
+print(sum4)
+print(sum5)
