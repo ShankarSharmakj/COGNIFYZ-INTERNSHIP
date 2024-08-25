@@ -1,0 +1,11 @@
+import pandas as pd
+import plotly.express as px
+def create_scatter_plot(dataframe, x_col, y_col):
+    fig = px.scatter(dataframe, x=x_col, y=y_col, title=f'Scatter Plot of {x_col} vs {y_col}')
+    fig.show()
+data={
+    'Age': [25, 30, 35, 40, 45, 50, 55, 60],
+    'Salary': [40000, 45000, 50000, 55000, 60000, 65000, 70000, 75000]
+}
+df = pd.DataFrame(data)
+create_scatter_plot(df, 'Age', 'Salary')
