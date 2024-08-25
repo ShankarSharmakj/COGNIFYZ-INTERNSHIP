@@ -1,0 +1,15 @@
+import random
+def number_guesser():
+    lower_bound = int(input("Enter the lower bound of the range: "))
+    upper_bound = int(input("Enter the upper bound of the range: "))
+    number = random.randint(lower_bound, upper_bound)
+    while True:
+        guess = int(input(f"Guess a number between {lower_bound} and {upper_bound}: "))
+        if guess < number:
+            print("Too low!")
+        elif guess > number:
+            print("Too high!")
+        else:
+            print("Congratulations! You guessed the correct number.")
+            break
+number_guesser()
